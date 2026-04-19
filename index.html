@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>A Feng Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #fff;
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)),
+        url('bg.jpg') center center / cover no-repeat fixed;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 28px 16px 40px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .profile {
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.85);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+
+    .bio {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+      max-width: 340px;
+      margin: 0 auto;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 16px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      transition: all 0.2s ease;
+    }
+
+    .link-item:hover,
+    .link-item:active {
+      transform: translateY(-1px) scale(1.01);
+      background: rgba(255,255,255,0.24);
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.78);
+    }
+
+    @media (max-width: 480px) {
+      .name {
+        font-size: 22px;
+      }
+
+      .bio {
+        font-size: 13px;
+      }
+
+      .link-item {
+        font-size: 15px;
+        min-height: 54px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+
+      <div class="profile">
+        <!-- 头像：把 avatar.jpg 换成你的头像文件名 -->
+        <img class="avatar" src="avatar.jpg" alt="头像" />
+
+        <!-- 名字-->
+        <div class="阿泽运动">A Feng</div>
+
+        <!-- 简介 -->
+        <div class="bio">
+          Instagram · Facebook · TikTok · YouTube<br>
+          Welcome to my official links page
+        </div>
+      </div>
+
+      <div class="links">
+        <a class="link-item" href="mailto:yeaman7497.official@gmail.com" target="_blank">Email</a>
+        <a class="link-item" href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a class="link-item" href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <a class="link-item" href="https://www.facebook.com/" target="_blank">Facebook</a>
+        <a class="link-item" href="https://www.threads.net/" target="_blank">Threads</a>
+        <a class="link-item" href="https://www.tiktok.com/" target="_blank">TikTok</a>
+        <a class="link-item" href="https://example.com/" target="_blank">Body Goals</a>
+      </div>
+
+      <div class="footer">
+        © 2026 A Feng
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
