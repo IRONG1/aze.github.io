@@ -34,7 +34,7 @@
     .page {
       width: 100%;
       min-height: 100vh;
-      padding: 30px 16px 36px;
+      padding: 24px 16px 36px;
       display: flex;
       justify-content: center;
     }
@@ -47,6 +47,18 @@
     .profile {
       text-align: center;
       margin-bottom: 22px;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      background: #f5f5f5;
     }
 
     .name {
@@ -123,6 +135,12 @@
       display: block;
     }
 
+    /* Threads 图标单独缩小一点 */
+    .threads .icon-box img {
+      width: 40px;
+      height: 40px;
+    }
+
     .link-text {
       flex: 1;
       min-width: 0;
@@ -178,16 +196,18 @@
       --card-border: #ffd3d3;
     }
 
+    /* Threads 更深一点，偏中性灰 */
     .threads {
       --main: #111111;
-      --card-bg: #f7f7f7;
-      --card-border: #e5e5e5;
+      --card-bg: #ececec;
+      --card-border: #d7d7d7;
     }
 
+    /* TikTok 也加深，但和 Threads 不一样，偏冷灰 */
     .tiktok {
       --main: #111111;
-      --card-bg: #f7f7f7;
-      --card-border: #e5e5e5;
+      --card-bg: #e6e8eb;
+      --card-border: #d2d7dd;
     }
 
     .gmail {
@@ -206,7 +226,12 @@
 
     @media (max-width: 480px) {
       .page {
-        padding: 24px 12px 30px;
+        padding: 20px 12px 30px;
+      }
+
+      .avatar {
+        width: 84px;
+        height: 84px;
       }
 
       .name {
@@ -239,6 +264,11 @@
         height: 42px;
       }
 
+      .threads .icon-box img {
+        width: 36px;
+        height: 36px;
+      }
+
       .link-title {
         font-size: 16px;
       }
@@ -258,6 +288,7 @@
     <div class="container">
 
       <div class="profile">
+        <img class="avatar" src="aze1.jpg" alt="Aze 头像" />
         <div class="name">Aze</div>
         <div class="subname">阿澤古法健身</div>
         <div class="bio">
