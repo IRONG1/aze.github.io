@@ -61,18 +61,19 @@
 
     .avatar-glow {
       position: absolute;
-      inset: -4px;
+      inset: -10px;
       border-radius: 50%;
       background: radial-gradient(
         circle,
-        rgba(58, 134, 255, 0.34) 0%,
-        rgba(58, 134, 255, 0.20) 38%,
-        rgba(58, 134, 255, 0.10) 58%,
-        rgba(58, 134, 255, 0.03) 72%,
-        rgba(58, 134, 255, 0) 82%
+        rgba(255, 153, 51, 0.34) 0%,
+        rgba(255, 153, 51, 0.22) 22%,
+        rgba(255, 153, 51, 0.13) 42%,
+        rgba(255, 153, 51, 0.07) 60%,
+        rgba(255, 153, 51, 0.03) 74%,
+        rgba(255, 153, 51, 0) 86%
       );
-      filter: blur(10px);
-      animation: avatarGlow 2.4s ease-in-out infinite;
+      filter: blur(12px);
+      animation: avatarGlow 2.6s ease-in-out infinite;
       pointer-events: none;
     }
 
@@ -88,16 +89,16 @@
       background: #f5f5f5;
       box-shadow:
         0 10px 24px rgba(0, 0, 0, 0.08),
-        0 0 0 6px rgba(58, 134, 255, 0.10);
+        0 0 0 4px rgba(255, 255, 255, 0.85);
     }
 
     @keyframes avatarGlow {
       0%, 100% {
-        transform: scale(0.97);
+        transform: scale(0.96);
         opacity: 0.78;
       }
       50% {
-        transform: scale(1.07);
+        transform: scale(1.06);
         opacity: 1;
       }
     }
@@ -262,6 +263,11 @@
         height: 112px;
       }
 
+      .avatar-glow {
+        inset: -8px;
+        filter: blur(10px);
+      }
+
       .avatar {
         width: 88px;
         height: 88px;
@@ -312,10 +318,10 @@
           <span class="avatar-glow"></span>
           <img class="avatar" src="aze.jpg" alt="Aze 头像" />
         </div>
-        <div class="name">阿澤古法健身</div>
+        <div class="name">Aze</div>
         <div class="bio">
-          歡迎聯絡我，查看我的社群平台與聯繫方式<br>
-          健康运动
+          阿澤古法健身<br>
+          歡迎聯絡我，查看我的社群平台與聯繫方式
         </div>
       </div>
 
