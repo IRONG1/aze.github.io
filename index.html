@@ -13,7 +13,7 @@
     }
 
     :root {
-      --bg: #f5f5f5;
+      --bg: #ffffff;
       --text: #111111;
       --subtext: #666666;
     }
@@ -34,9 +34,9 @@
     .page {
       width: 100%;
       min-height: 100vh;
+      padding: 30px 16px 36px;
       display: flex;
       justify-content: center;
-      padding: 18px 12px 30px;
     }
 
     .container {
@@ -46,39 +46,27 @@
 
     .profile {
       text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .avatar {
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 12px;
-      border: 3px solid #ffffff;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-      background: #ffffff;
+      margin-bottom: 22px;
     }
 
     .name {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
       line-height: 1.2;
+      color: #111;
       margin-bottom: 8px;
-      color: #111111;
     }
 
     .subname {
-      font-size: 14px;
-      color: #444444;
+      font-size: 15px;
+      color: #444;
       margin-bottom: 10px;
     }
 
     .bio {
       font-size: 14px;
       line-height: 1.8;
-      color: #555555;
+      color: var(--subtext);
       max-width: 360px;
       margin: 0 auto;
     }
@@ -87,34 +75,32 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-top: 10px;
+      margin-top: 24px;
     }
 
     .link-item {
-      --main: #222222;
-      --bd: #e8e8e8;
-      --bg-tint: #ffffff;
-      --icon-bg: #ffffff;
-      --icon-border: transparent;
+      --main: #333;
+      --card-bg: #fff;
+      --card-border: #ececec;
 
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       width: 100%;
-      min-height: 90px;
-      padding: 16px 18px;
-      border-radius: 24px;
+      min-height: 78px;
+      padding: 14px 18px;
+      border-radius: 22px;
       text-decoration: none;
-      color: #111111;
-      background: var(--bg-tint);
-      border: 1.5px solid var(--bd);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .link-item:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
     }
 
     .link-item:active {
@@ -122,21 +108,17 @@
     }
 
     .icon-box {
-      flex: 0 0 60px;
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
+      flex: 0 0 54px;
+      width: 54px;
+      height: 54px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      background: var(--icon-bg);
-      border: 1px solid var(--icon-border);
     }
 
     .icon-box img {
-      width: 38px;
-      height: 38px;
+      width: 46px;
+      height: 46px;
       object-fit: contain;
       display: block;
     }
@@ -144,107 +126,95 @@
     .link-text {
       flex: 1;
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       text-align: left;
     }
 
     .link-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       line-height: 1.2;
-      color: #111111;
-      margin-bottom: 5px;
+      color: #111;
     }
 
     .link-desc {
-      font-size: 13px;
-      color: #6b7280;
+      margin-top: 4px;
+      font-size: 12px;
       line-height: 1.4;
+      color: #6b7280;
     }
 
     .arrow {
       flex: 0 0 auto;
-      font-size: 25px;
+      font-size: 22px;
       line-height: 1;
       color: var(--main);
       font-weight: 700;
-      margin-left: 4px;
     }
 
     .line {
       --main: #06c755;
-      --bd: #bfeecf;
-      --bg-tint: #edf7f1;
-      --icon-bg: #08c54c;
+      --card-bg: #eef9f1;
+      --card-border: #c8eed3;
     }
 
     .instagram {
       --main: #ef3b7d;
-      --bd: #f6c7d7;
-      --bg-tint: #f8edf2;
-      --icon-bg: linear-gradient(135deg, #833ab4 0%, #fd1d1d 55%, #fcb045 100%);
+      --card-bg: #fbf0f5;
+      --card-border: #f5cddd;
     }
 
     .facebook {
       --main: #1877f2;
-      --bd: #c7dcff;
-      --bg-tint: #eef3fb;
-      --icon-bg: #1877f2;
+      --card-bg: #eef4ff;
+      --card-border: #cfe0ff;
     }
 
     .youtube {
       --main: #ff2a2a;
-      --bd: #ffcaca;
-      --bg-tint: #fbf1f1;
-      --icon-bg: #ffffff;
-      --icon-border: #ffd8d8;
+      --card-bg: #fff3f3;
+      --card-border: #ffd3d3;
     }
 
     .threads {
       --main: #111111;
-      --bd: #dddddd;
-      --bg-tint: #f3f3f3;
-      --icon-bg: #000000;
+      --card-bg: #f7f7f7;
+      --card-border: #e5e5e5;
     }
 
     .tiktok {
       --main: #111111;
-      --bd: #dddddd;
-      --bg-tint: #f3f3f3;
-      --icon-bg: #000000;
+      --card-bg: #f7f7f7;
+      --card-border: #e5e5e5;
     }
 
     .gmail {
-      --main: #f24d3d;
-      --bd: #ffd3cc;
-      --bg-tint: #fff5f2;
-      --icon-bg: #ffffff;
-      --icon-border: #ffd8d1;
+      --main: #ea4335;
+      --card-bg: #fff5f2;
+      --card-border: #ffd8d1;
     }
 
     .footer {
       text-align: center;
       font-size: 12px;
-      color: #999999;
-      margin-top: 20px;
-      padding-bottom: 4px;
+      color: #999;
+      margin-top: 22px;
+      padding-bottom: 6px;
     }
 
     @media (max-width: 480px) {
       .page {
-        padding: 14px 10px 26px;
-      }
-
-      .avatar {
-        width: 84px;
-        height: 84px;
+        padding: 24px 12px 30px;
       }
 
       .name {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .subname {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .bio {
@@ -252,29 +222,33 @@
       }
 
       .link-item {
-        min-height: 84px;
-        padding: 14px 16px;
-        border-radius: 22px;
-        gap: 14px;
+        min-height: 72px;
+        padding: 12px 15px;
+        border-radius: 18px;
+        gap: 12px;
       }
 
       .icon-box {
-        width: 56px;
-        height: 56px;
-        border-radius: 17px;
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
       }
 
       .icon-box img {
-        width: 36px;
-        height: 36px;
+        width: 42px;
+        height: 42px;
       }
 
       .link-title {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .link-desc {
-        font-size: 12px;
+        font-size: 11px;
+      }
+
+      .arrow {
+        font-size: 20px;
       }
     }
   </style>
@@ -284,7 +258,6 @@
     <div class="container">
 
       <div class="profile">
-        <img class="avatar" src="aze.jpg" alt="Aze 头像" />
         <div class="name">Aze</div>
         <div class="subname">阿澤古法健身</div>
         <div class="bio">
@@ -293,6 +266,7 @@
       </div>
 
       <div class="links">
+
         <a class="link-item line" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">
           <div class="icon-box">
             <img src="line.png" alt="LINE">
@@ -369,6 +343,7 @@
           </div>
           <div class="arrow">›</div>
         </a>
+
       </div>
 
       <div class="footer">© 2026 Aze</div>
