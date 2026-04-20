@@ -23,7 +23,7 @@
       min-height: 100%;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
     }
 
     body {
@@ -34,7 +34,7 @@
     .page {
       width: 100%;
       min-height: 100vh;
-      padding: 30px 16px 36px;
+      padding: 28px 16px 40px;
       display: flex;
       justify-content: center;
     }
@@ -46,21 +46,67 @@
 
     .profile {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 122px;
+      height: 122px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(58, 134, 255, 0.34) 0%,
+        rgba(58, 134, 255, 0.20) 38%,
+        rgba(58, 134, 255, 0.10) 58%,
+        rgba(58, 134, 255, 0.03) 72%,
+        rgba(58, 134, 255, 0) 82%
+      );
+      filter: blur(10px);
+      animation: avatarGlow 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .avatar {
+      position: relative;
+      z-index: 2;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #fff;
+      background: #f5f5f5;
+      box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.08),
+        0 0 0 6px rgba(58, 134, 255, 0.10);
+    }
+
+    @keyframes avatarGlow {
+      0%, 100% {
+        transform: scale(0.97);
+        opacity: 0.78;
+      }
+      50% {
+        transform: scale(1.07);
+        opacity: 1;
+      }
     }
 
     .name {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 800;
-      line-height: 1.2;
       color: #111;
       margin-bottom: 8px;
-    }
-
-    .subname {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 10px;
     }
 
     .bio {
@@ -75,57 +121,61 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 26px;
     }
 
     .link-item {
-      --main: #333;
-      --card-bg: #fff;
-      --card-border: #ececec;
+      --c: #333;
+      --bg1: #f8f8f8;
+      --bg2: #ffffff;
+      --bd: #ececec;
 
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       width: 100%;
-      min-height: 78px;
+      min-height: 62px;
       padding: 14px 18px;
-      border-radius: 22px;
+      border-radius: 18px;
       text-decoration: none;
       color: var(--text);
-      background: var(--card-bg);
-      border: 1.5px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      border: 1.5px solid var(--bd);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+      transition: 0.2s ease;
     }
 
     .link-item:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
     }
 
     .link-item:active {
-      transform: scale(0.985);
+      transform: scale(0.98);
+      filter: brightness(0.97);
     }
 
     .icon-box {
-      flex: 0 0 54px;
-      width: 54px;
-      height: 54px;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .icon-box img {
-      width: 46px;
-      height: 46px;
+      width: 34px;
+      height: 34px;
       object-fit: contain;
       display: block;
     }
 
     .link-text {
       flex: 1;
-      min-width: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -133,67 +183,65 @@
     }
 
     .link-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       line-height: 1.2;
-      color: #111;
     }
 
     .link-desc {
       margin-top: 4px;
       font-size: 12px;
+      color: #7a7a7a;
       line-height: 1.4;
-      color: #6b7280;
     }
 
     .arrow {
       flex: 0 0 auto;
-      font-size: 22px;
-      line-height: 1;
-      color: var(--main);
+      font-size: 20px;
+      color: var(--c);
       font-weight: 700;
     }
 
     .line {
-      --main: #06c755;
-      --card-bg: #eef9f1;
-      --card-border: #c8eed3;
+      --c: #06c755;
+      --bg1: #effdf4;
+      --bg2: #ffffff;
+      --bd: #c8f2d7;
     }
 
     .instagram {
-      --main: #ef3b7d;
-      --card-bg: #fbf0f5;
-      --card-border: #f5cddd;
+      --c: #e1306c;
+      --bg1: #fff1f7;
+      --bg2: #fff7f3;
+      --bd: #ffd3e3;
     }
 
     .facebook {
-      --main: #1877f2;
-      --card-bg: #eef4ff;
-      --card-border: #cfe0ff;
+      --c: #1877f2;
+      --bg1: #eef5ff;
+      --bg2: #ffffff;
+      --bd: #cfe1ff;
     }
 
     .youtube {
-      --main: #ff2a2a;
-      --card-bg: #fff3f3;
-      --card-border: #ffd3d3;
-    }
-
-    .threads {
-      --main: #111111;
-      --card-bg: #f7f7f7;
-      --card-border: #e5e5e5;
+      --c: #ff0000;
+      --bg1: #fff2f2;
+      --bg2: #ffffff;
+      --bd: #ffd1d1;
     }
 
     .tiktok {
-      --main: #111111;
-      --card-bg: #f7f7f7;
-      --card-border: #e5e5e5;
+      --c: #111111;
+      --bg1: #f6f6f6;
+      --bg2: #ffffff;
+      --bd: #e8e8e8;
     }
 
     .gmail {
-      --main: #ea4335;
-      --card-bg: #fff5f2;
-      --card-border: #ffd8d1;
+      --c: #ea4335;
+      --bg1: #fff3f1;
+      --bg2: #ffffff;
+      --bd: #ffd7d1;
     }
 
     .footer {
@@ -201,20 +249,26 @@
       font-size: 12px;
       color: #999;
       margin-top: 22px;
-      padding-bottom: 6px;
+      padding-bottom: 8px;
     }
 
     @media (max-width: 480px) {
       .page {
-        padding: 24px 12px 30px;
+        padding: 22px 14px 32px;
+      }
+
+      .avatar-wrap {
+        width: 112px;
+        height: 112px;
+      }
+
+      .avatar {
+        width: 88px;
+        height: 88px;
       }
 
       .name {
-        font-size: 26px;
-      }
-
-      .subname {
-        font-size: 14px;
+        font-size: 22px;
       }
 
       .bio {
@@ -222,33 +276,29 @@
       }
 
       .link-item {
-        min-height: 72px;
-        padding: 12px 15px;
-        border-radius: 18px;
-        gap: 12px;
+        min-height: 58px;
+        padding: 12px 14px;
+        gap: 14px;
+        border-radius: 16px;
       }
 
       .icon-box {
-        width: 50px;
-        height: 50px;
-        flex-basis: 50px;
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
       }
 
       .icon-box img {
-        width: 42px;
-        height: 42px;
+        width: 30px;
+        height: 30px;
       }
 
       .link-title {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .link-desc {
         font-size: 11px;
-      }
-
-      .arrow {
-        font-size: 20px;
       }
     }
   </style>
@@ -258,10 +308,14 @@
     <div class="container">
 
       <div class="profile">
+        <div class="avatar-wrap">
+          <span class="avatar-glow"></span>
+          <img class="avatar" src="aze.jpg" alt="Aze 头像" />
+        </div>
         <div class="name">阿澤古法健身</div>
-        <div class="subname">歡迎聯絡我，查看我的社群平台與聯繫方式</div>
         <div class="bio">
-          古法健康运动
+          歡迎聯絡我，查看我的社群平台與聯繫方式<br>
+          健康运动
         </div>
       </div>
 
@@ -307,17 +361,6 @@
           <div class="link-text">
             <div class="link-title">YouTube</div>
             <div class="link-desc">觀看影片內容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item threads" href="https://www.threads.net/" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box">
-            <img src="thread.png" alt="Threads">
-          </div>
-          <div class="link-text">
-            <div class="link-title">Threads</div>
-            <div class="link-desc">查看日常更新</div>
           </div>
           <div class="arrow">›</div>
         </a>
