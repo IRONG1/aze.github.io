@@ -13,10 +13,9 @@
     }
 
     :root {
-      --bg: #ffffff;
+      --bg: #f5f5f5;
       --text: #111111;
       --subtext: #666666;
-      --shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
     }
 
     html, body {
@@ -24,7 +23,7 @@
       min-height: 100%;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     }
 
     body {
@@ -35,31 +34,31 @@
     .page {
       width: 100%;
       min-height: 100vh;
-      padding: 28px 16px calc(34px + env(safe-area-inset-bottom));
       display: flex;
       justify-content: center;
+      padding: 22px 14px 34px;
     }
 
     .container {
       width: 100%;
-      max-width: 430px;
+      max-width: 460px;
     }
 
     .profile {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 92px;
+      height: 92px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 0 auto 14px;
-      background: #f4f4f4;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      border: 3px solid #fff;
+      margin: 0 auto 12px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
     }
 
     .name {
@@ -67,177 +66,174 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 8px;
-      color: #111;
+      color: #111111;
+    }
+
+    .subname {
+      font-size: 14px;
+      color: #444444;
+      margin-bottom: 10px;
     }
 
     .bio {
-      max-width: 330px;
-      margin: 0 auto;
       font-size: 14px;
       line-height: 1.8;
-      color: var(--subtext);
+      color: #555555;
+      max-width: 360px;
+      margin: 0 auto;
     }
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-top: 26px;
+      margin-top: 12px;
     }
 
     .link-item {
-      --accent: #333;
-      --soft: #f7f7f7;
-      --border: #ececec;
+      --main: #222222;
+      --bd: #e8e8e8;
+      --bg-tint: #ffffff;
 
       display: flex;
       align-items: center;
       gap: 14px;
       width: 100%;
-      min-height: 72px;
-      padding: 14px 16px;
+      min-height: 74px;
+      padding: 14px 18px;
       border-radius: 22px;
       text-decoration: none;
-      color: #111;
-      background: var(--soft);
-      border: 1.5px solid var(--border);
-      box-shadow: var(--shadow);
+      color: #111111;
+      background: var(--bg-tint);
+      border: 1.5px solid var(--bd);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .link-item:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
     }
 
     .link-item:active {
       transform: scale(0.985);
     }
 
-    .icon-wrap {
+    .icon-box {
+      flex: 0 0 48px;
       width: 48px;
       height: 48px;
-      border-radius: 15px;
-      overflow: hidden;
-      flex: 0 0 48px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
-    .icon-wrap img {
+    .icon-box img {
       width: 26px;
       height: 26px;
       object-fit: contain;
       display: block;
     }
 
-    .text-wrap {
+    .link-text {
       flex: 1;
       min-width: 0;
+      text-align: left;
     }
 
-    .title {
-      font-size: 16px;
-      font-weight: 800;
+    .link-title {
+      font-size: 17px;
+      font-weight: 700;
       line-height: 1.2;
-      color: #111;
+      color: #111111;
+      margin-bottom: 4px;
     }
 
-    .desc {
-      margin-top: 5px;
+    .link-desc {
       font-size: 12px;
-      color: #666;
+      color: #6b7280;
       line-height: 1.4;
     }
 
     .arrow {
       flex: 0 0 auto;
-      font-size: 22px;
+      font-size: 24px;
       line-height: 1;
-      color: var(--accent);
-      opacity: 0.85;
+      color: var(--main);
       font-weight: 700;
+      margin-left: 6px;
     }
 
     .line {
-      --accent: #06c755;
-      --soft: #eefcf3;
-      --border: #c9f0d8;
+      --main: #06c755;
+      --bd: #bfeecf;
+      --bg-tint: #eef8f1;
     }
 
     .instagram {
-      --accent: #e1306c;
-      --soft: #fff1f7;
-      --border: #ffd1e2;
+      --main: #ef3b7d;
+      --bd: #f8c6d6;
+      --bg-tint: #f8edf2;
     }
 
     .facebook {
-      --accent: #1877f2;
-      --soft: #eef5ff;
-      --border: #cfe1ff;
+      --main: #1877f2;
+      --bd: #c8dcff;
+      --bg-tint: #eef3fb;
     }
 
     .youtube {
-      --accent: #ff0000;
-      --soft: #fff1f1;
-      --border: #ffd1d1;
+      --main: #ff1f1f;
+      --bd: #ffc7c7;
+      --bg-tint: #fbf1f1;
     }
 
     .threads {
-      --accent: #111111;
-      --soft: #f5f5f5;
-      --border: #e7e7e7;
+      --main: #222222;
+      --bd: #dddddd;
+      --bg-tint: #f1f1f1;
     }
 
     .tiktok {
-      --accent: #111111;
-      --soft: #f6f6f6;
-      --border: #e8e8e8;
+      --main: #222222;
+      --bd: #dddddd;
+      --bg-tint: #f1f1f1;
     }
 
     .gmail {
-      --accent: #ea4335;
-      --soft: #fff3f1;
-      --border: #ffd7d1;
-    }
-
-    .line:active,
-    .instagram:active,
-    .facebook:active,
-    .youtube:active,
-    .threads:active,
-    .tiktok:active,
-    .gmail:active {
-      background: color-mix(in srgb, var(--accent) 10%, white);
-    }
-
-    .is-disabled {
-      opacity: 0.72;
-      pointer-events: none;
+      --main: #f24d3d;
+      --bd: #ffcfc7;
+      --bg-tint: #fff5f2;
     }
 
     .footer {
       text-align: center;
-      margin-top: 22px;
       font-size: 12px;
-      color: #999;
+      color: #999999;
+      margin-top: 22px;
+      padding-bottom: 4px;
     }
 
     @media (max-width: 480px) {
       .page {
-        padding: 22px 14px calc(28px + env(safe-area-inset-bottom));
+        padding: 16px 12px 28px;
       }
 
       .avatar {
-        width: 88px;
-        height: 88px;
+        width: 86px;
+        height: 86px;
       }
 
       .name {
         font-size: 24px;
+      }
+
+      .subname {
+        font-size: 13px;
       }
 
       .bio {
@@ -245,30 +241,23 @@
       }
 
       .link-item {
-        min-height: 68px;
+        min-height: 70px;
+        padding: 12px 16px;
         border-radius: 20px;
-        padding: 13px 14px;
-        gap: 12px;
       }
 
-      .icon-wrap {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        flex-basis: 44px;
+      .icon-box {
+        width: 46px;
+        height: 46px;
       }
 
-      .icon-wrap img {
+      .icon-box img {
         width: 24px;
         height: 24px;
       }
 
-      .title {
-        font-size: 15px;
-      }
-
-      .desc {
-        font-size: 11px;
+      .link-title {
+        font-size: 16px;
       }
     }
   </style>
@@ -278,93 +267,91 @@
     <div class="container">
 
       <div class="profile">
-        <img class="avatar" src="aze.jpg" alt="Aze 頭像" />
-        <div class="name">Aze</div>
+        <img class="avatar" src="aze.jpg" alt="Aze 头像" />
+        <div class="name">阿澤古法健身</div>
+        <div class="subname">健康·运动·传统</div>
         <div class="bio">
-          阿澤古法健身<br>
           歡迎聯絡我，查看我的社群平台與聯繫方式
         </div>
       </div>
 
       <div class="links">
-
-        <a class="link-item line is-disabled" href="javascript:void(0)" aria-disabled="true">
-          <div class="icon-wrap">
-            <img src="icons/line.png" alt="LINE" />
+        <a class="link-item line" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box">
+            <img src="line.png" alt="LINE">
           </div>
-          <div class="text-wrap">
-            <div class="title">LINE</div>
-            <div class="desc">等你補上 LINE 連結後啟用</div>
+          <div class="link-text">
+            <div class="link-title">LINE</div>
+            <div class="link-desc">一對一私訊聯絡</div>
           </div>
           <div class="arrow">›</div>
         </a>
 
         <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
-          <div class="icon-wrap">
-            <img src="icons/instagram.png" alt="Instagram" />
+          <div class="icon-box">
+            <img src="instagram.png" alt="Instagram">
           </div>
-          <div class="text-wrap">
-            <div class="title">Instagram</div>
-            <div class="desc">追蹤最新內容</div>
+          <div class="link-text">
+            <div class="link-title">Instagram</div>
+            <div class="link-desc">追蹤最新內容</div>
           </div>
           <div class="arrow">›</div>
         </a>
 
-        <a class="link-item facebook" href="https://www.facebook.com/profile.php?id=61570969691765" target="_blank" rel="noopener noreferrer">
-          <div class="icon-wrap">
-            <img src="icons/facebook.png" alt="Facebook" />
+        <a class="link-item facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box">
+            <img src="facebook.png" alt="Facebook">
           </div>
-          <div class="text-wrap">
-            <div class="title">Facebook</div>
-            <div class="desc">查看更多資訊</div>
+          <div class="link-text">
+            <div class="link-title">Facebook</div>
+            <div class="link-desc">查看更多資訊</div>
           </div>
           <div class="arrow">›</div>
         </a>
 
         <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
-          <div class="icon-wrap">
-            <img src="icons/youtube.png" alt="YouTube" />
+          <div class="icon-box">
+            <img src="youtube.png" alt="YouTube">
           </div>
-          <div class="text-wrap">
-            <div class="title">YouTube</div>
-            <div class="desc">觀看影片內容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item threads is-disabled" href="javascript:void(0)" aria-disabled="true">
-          <div class="icon-wrap">
-            <img src="icons/thread.png" alt="Threads" />
-          </div>
-          <div class="text-wrap">
-            <div class="title">Threads</div>
-            <div class="desc">等你補上 Threads 連結後啟用</div>
+          <div class="link-text">
+            <div class="link-title">YouTube</div>
+            <div class="link-desc">觀看影片內容</div>
           </div>
           <div class="arrow">›</div>
         </a>
 
-        <a class="link-item tiktok" href="https://www.tiktok.com/@naoctc8ot3" target="_blank" rel="noopener noreferrer">
-          <div class="icon-wrap">
-            <img src="icons/tiktok.png" alt="TikTok" />
+        <a class="link-item threads" href="https://www.threads.net/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box">
+            <img src="thread.png" alt="Threads">
           </div>
-          <div class="text-wrap">
-            <div class="title">TikTok</div>
-            <div class="desc">短影片與精華內容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item gmail" href="mailto:aze1848205033@gmail.com">
-          <div class="icon-wrap">
-            <img src="icons/gmail.png" alt="Gmail" />
-          </div>
-          <div class="text-wrap">
-            <div class="title">Gmail</div>
-            <div class="desc">Email 聯絡我</div>
+          <div class="link-text">
+            <div class="link-title">Threads</div>
+            <div class="link-desc">查看日常更新</div>
           </div>
           <div class="arrow">›</div>
         </a>
 
+        <a class="link-item tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box">
+            <img src="tiktok.png" alt="TikTok">
+          </div>
+          <div class="link-text">
+            <div class="link-title">TikTok</div>
+            <div class="link-desc">短影片與精華內容</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item gmail" href="mailto:yourgmail@gmail.com">
+          <div class="icon-box">
+            <img src="gmail.png" alt="Gmail">
+          </div>
+          <div class="link-text">
+            <div class="link-title">Gmail</div>
+            <div class="link-desc">Email 聯絡我</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
       </div>
 
       <div class="footer">© 2026 Aze</div>
