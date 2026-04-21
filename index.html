@@ -118,17 +118,6 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 0 0 4px rgba(255, 255, 255, 0.85);
     }
 
-    @keyframes avatarGlow {
-      0%, 100% {
-        transform: scale(0.96);
-        opacity: 0.78;
-      }
-      50% {
-        transform: scale(1.06);
-        opacity: 1;
-      }
-    }
-
     .name {
       font-size: 26px;
       font-weight: 800;
@@ -182,8 +171,8 @@
       width: 44px;
       height: 44px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .icon-box img {
@@ -209,7 +198,6 @@
       font-weight: 700;
     }
 
-    /* 页脚部分 */
     .footer {
       text-align: center;
       font-size: 12px;
@@ -228,10 +216,10 @@
       <header class="navbar">
         <div class="nav-left">导航</div>
         <div class="nav-center">
-          <img src="line-logo.png" alt="LINE Logo" />
+          <img src="your-line-logo.png" alt="LINE Logo" />
         </div>
         <div class="nav-right">
-          <button class="share-btn">分享</button>
+          <button class="share-btn" onclick="sharePage()">分享</button>
         </div>
       </header>
 
@@ -279,5 +267,13 @@
 
     </div>
   </div>
+
+  <script>
+    function sharePage() {
+      // 分享功能（可根据需求实现）
+      alert('分享功能待实现');
+    }
+  </script>
+
 </body>
 </html>
