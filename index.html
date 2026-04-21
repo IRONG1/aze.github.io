@@ -74,14 +74,14 @@
       justify-content: center;
       border-radius: 14px;
       cursor: pointer;
+      padding: 0;
     }
 
     .icon-btn:active {
       transform: scale(0.96);
     }
 
-    .menu-btn svg,
-    .share-btn svg {
+    .menu-btn svg {
       width: 23px;
       height: 23px;
       stroke: #161616;
@@ -128,6 +128,14 @@
       border: 2px solid rgba(0, 0, 0, 0.08);
       background: linear-gradient(180deg, #37de74 0%, #22cc5a 100%);
       box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05), 0 6px 14px rgba(25, 201, 87, 0.16);
+    }
+
+    .share-btn img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      display: block;
+      filter: none;
     }
 
     .drawer {
@@ -453,12 +461,7 @@
       </div>
 
       <button class="icon-btn share-btn" id="shareBtn" aria-label="分享页面">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 20V4h5"></path>
-          <path d="M9 20H4"></path>
-          <path d="M8 16c0-5.6 3.6-9 9-9h2"></path>
-          <path d="M14 4l5 3.5L14 11"></path>
-        </svg>
+        <img src="forward.png" alt="分享" />
       </button>
 
       <nav class="drawer" id="drawer">
@@ -495,7 +498,7 @@
       <div class="intro-box">我要报名参加Gina老师<br />12月吉隆坡站</div>
 
       <div class="btn-stack">
-        <a class="primary-btn" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">领取健康食谱</a>
+        <a class="primary-btn" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">領取健康食譜</a>
         <a class="secondary-btn" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">加入 LINE 聊天</a>
       </div>
 
