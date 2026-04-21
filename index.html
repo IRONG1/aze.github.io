@@ -7,16 +7,21 @@
   <style>
     :root {
       --bg: #ffffff;
-      --soft: #f1f2ef;
+      --soft: #f3f4f1;
       --text: #111111;
       --subtext: #6b6f69;
       --green: #19c957;
+      --green-deep: #14b34a;
       --border: rgba(17, 17, 17, 0.08);
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+      --shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
       --maxw: 430px;
     }
 
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     html, body {
       margin: 0;
       min-height: 100%;
@@ -24,9 +29,21 @@
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     }
-    body { display: flex; justify-content: center; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; color: inherit; }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
 
     .page {
       width: 100%;
@@ -58,7 +75,10 @@
       border-radius: 14px;
       cursor: pointer;
     }
-    .icon-btn:active { transform: scale(0.96); }
+
+    .icon-btn:active {
+      transform: scale(0.96);
+    }
 
     .menu-btn svg,
     .share-btn svg {
@@ -107,7 +127,7 @@
       border-radius: 50%;
       border: 2px solid rgba(0, 0, 0, 0.08);
       background: linear-gradient(180deg, #37de74 0%, #22cc5a 100%);
-      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.06), 0 6px 16px rgba(25, 201, 87, 0.18);
+      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05), 0 6px 14px rgba(25, 201, 87, 0.16);
     }
 
     .drawer {
@@ -131,7 +151,12 @@
       z-index: 30;
       backdrop-filter: blur(14px);
     }
-    .drawer.open { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+
+    .drawer.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
 
     .drawer-item {
       display: flex;
@@ -143,8 +168,14 @@
       color: #171717;
       transition: background 0.18s ease, transform 0.18s ease;
     }
-    .drawer-item:hover { background: #f4f4f4; }
-    .drawer-item:active { transform: scale(0.98); }
+
+    .drawer-item:hover {
+      background: #f4f4f4;
+    }
+
+    .drawer-item:active {
+      transform: scale(0.98);
+    }
 
     .drawer-icon {
       width: 26px;
@@ -157,19 +188,25 @@
       flex: 0 0 auto;
       overflow: hidden;
     }
+
     .drawer-icon img {
       width: 16px;
       height: 16px;
       display: block;
       object-fit: contain;
     }
-    .drawer-item span:last-child { font-size: 13px; font-weight: 600; }
+
+    .drawer-item span:last-child {
+      font-size: 13px;
+      font-weight: 600;
+    }
 
     .hero {
       padding: 42px 22px 18px;
       text-align: center;
       background: #ffffff;
     }
+
     .avatar {
       width: 124px;
       height: 124px;
@@ -180,6 +217,7 @@
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
       background: #e7e7e7;
     }
+
     .title {
       margin: 22px 0 0;
       font-size: 26px;
@@ -187,6 +225,7 @@
       font-weight: 500;
       letter-spacing: -0.04em;
     }
+
     .intro-box {
       margin: 20px auto 0;
       max-width: 100%;
@@ -199,25 +238,34 @@
       letter-spacing: -0.02em;
     }
 
-    .btn-stack { margin-top: 20px; display: grid; gap: 11px; }
-    .primary-btn, .secondary-btn {
+    .btn-stack {
+      margin-top: 20px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       border-radius: 999px;
-      letter-spacing: -0.02em;
+      letter-spacing: 0;
       transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
     }
+
     .primary-btn {
       min-height: 56px;
-      background: linear-gradient(180deg, #34da71 0%, #19c957 100%);
+      background: linear-gradient(180deg, #2fd86c 0%, #19c957 100%);
       border: 0;
-      box-shadow: 0 8px 20px rgba(25, 201, 87, 0.22);
-      color: #fff;
-      font-size: 17px;
-      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(25, 201, 87, 0.18);
+      color: rgba(255, 255, 255, 0.96);
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     }
+
     .secondary-btn {
       min-height: 52px;
       background: #ffffff;
@@ -228,7 +276,12 @@
       font-weight: 900;
       font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
     }
-    .primary-btn:active, .secondary-btn:active, .link-item:active { transform: scale(0.985); }
+
+    .primary-btn:active,
+    .secondary-btn:active,
+    .link-item:active {
+      transform: scale(0.985);
+    }
 
     .download-hint {
       margin-top: 18px;
@@ -241,6 +294,7 @@
       color: #292929;
       flex-wrap: wrap;
     }
+
     .download-hint a {
       color: #10bc4b;
       font-weight: 600;
@@ -250,7 +304,7 @@
 
     .more-panel {
       margin-top: 14px;
-      background: var(--soft);
+      background: #ffffff;
       color: #111;
       padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -264,7 +318,12 @@
       letter-spacing: 0.02em;
     }
 
-    .links { display: flex; flex-direction: column; gap: 12px; }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .link-item {
       --c: #333;
       --bg1: #f8f8f8;
@@ -283,6 +342,7 @@
       color: #111;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
+
     .link-item:hover {
       transform: translateY(-1px);
       box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
@@ -298,6 +358,7 @@
       background: transparent;
       overflow: visible;
     }
+
     .icon-box img {
       width: 30px;
       height: 30px;
@@ -312,9 +373,26 @@
       align-items: flex-start;
       text-align: left;
     }
-    .link-title { font-size: 15px; font-weight: 700; line-height: 1.2; }
-    .link-desc { margin-top: 3px; font-size: 11px; color: #7a7a7a; line-height: 1.35; }
-    .arrow { flex: 0 0 auto; font-size: 18px; color: var(--c); font-weight: 700; }
+
+    .link-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .link-desc {
+      margin-top: 3px;
+      font-size: 11px;
+      color: #7a7a7a;
+      line-height: 1.35;
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+      font-size: 18px;
+      color: var(--c);
+      font-weight: 700;
+    }
 
     .line { --c: #06c755; --bg1: #effdf4; --bg2: #ffffff; --bd: #c8f2d7; }
     .instagram { --c: #e1306c; --bg1: #fff1f7; --bg2: #fff7f3; --bd: #ffd3e3; }
@@ -332,11 +410,29 @@
     }
 
     @media (max-width: 390px) {
-      .hero { padding-left: 18px; padding-right: 18px; }
-      .title { font-size: 24px; }
-      .intro-box { font-size: 17px; padding: 20px 16px; }
-      .primary-btn { min-height: 54px; font-size: 16px; }
-      .secondary-btn { min-height: 50px; font-size: 14px; }
+      .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .intro-box {
+        font-size: 17px;
+        padding: 20px 16px;
+      }
+
+      .primary-btn {
+        min-height: 54px;
+        font-size: 15px;
+      }
+
+      .secondary-btn {
+        min-height: 50px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -344,41 +440,129 @@
   <div class="page">
     <header class="topbar">
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="展开导航">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
       </button>
 
-      <div class="brand"><span cl-btn share-btn" id="shareBtn" aria-label="分享页面">
+      <div class="brand">
+        <span class="brand-mark"><img src="line.png" alt="LINE" /></span>
+        <span>LINE</span>
+      </div>
+
+      <button class="icon-btn share-btn" id="shareBtn" aria-label="分享页面">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <paopener noreferrer"><span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span><span>Facebook</span></a>
-        <a class="drawer-item" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="line.png" alt="LINE" /></span><span>LINE</span></a>
-        <a class="drawer-item" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="instagram.png" alt="Instagram" /></span><span>Instagram</span></a>
-        <a class="drawer-item" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="youtube.png" alt="YouTube" /></span><span>YouTube</span></a>
-        <a class="drawer-item" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="tiktok.png" alt="TikTok" /></span><span>TikTok</span></a>
-        <a class="drawer-item" href="mailto:yourgmail@gmail.com"><span class="drawer-icon"><img src="gmail.png" alt="Email" /></span><span>Email</span></a>
+          <path d="M4 20V4h5"></path>
+          <path d="M9 20H4"></path>
+          <path d="M8 16c0-5.6 3.6-9 9-9h2"></path>
+          <path d="M14 4l5 3.5L14 11"></path>
+        </svg>
+      </button>
+
+      <nav class="drawer" id="drawer">
+        <a class="drawer-item" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span>
+          <span>Facebook</span>
+        </a>
+        <a class="drawer-item" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">
+          <span class="drawer-icon"><img src="line.png" alt="LINE" /></span>
+          <span>LINE</span>
+        </a>
+        <a class="drawer-item" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
+          <span class="drawer-icon"><img src="instagram.png" alt="Instagram" /></span>
+          <span>Instagram</span>
+        </a>
+        <a class="drawer-item" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
+          <span class="drawer-icon"><img src="youtube.png" alt="YouTube" /></span>
+          <span>YouTube</span>
+        </a>
+        <a class="drawer-item" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+          <span class="drawer-icon"><img src="tiktok.png" alt="TikTok" /></span>
+          <span>TikTok</span>
+        </a>
+        <a class="drawer-item" href="mailto:yourgmail@gmail.com">
+          <span class="drawer-icon"><img src="gmail.png" alt="Email" /></span>
+          <span>Email</span>
+        </a>
       </nav>
     </header>
 
     <main class="hero">
       <img class="avatar" src="aze.jpg" alt="头像" />
-      <h1 class="title">蓝蒂蔻马来西亚官方</h1>
+      <h1 class="title">阿澤古法健身</h1>
       <div class="intro-box">我要报名参加Gina老师<br />12月吉隆坡站</div>
+
       <div class="btn-stack">
         <a class="primary-btn" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">领取健康食谱</a>
         <a class="secondary-btn" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">加入 LINE 聊天</a>
       </div>
-      <div class="download-hint"><span>没有LINE？</span><a href="https://line.me/" target="_blank" rel="noopener noreferrer">立即下载</a></div>
+
+      <div class="download-hint">
+        <span>没有LINE？</span>
+        <a href="https://line.me/" target="_blank" rel="noopener noreferrer">立即下载</a>
+      </div>
     </main>
 
     <section class="more-panel">
       <h2 class="section-title">更多內容與延伸入口</h2>
       <div class="links">
-        <a class="link-item facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="facebook.png" alt="Facebook"></div><div class="link-text"><div class="link-title">Facebook</div><div class="link-desc">查看更多资讯</div></div><div class="arrow">›</div></a>
-        <a class="link-item line" hrerrer"><div class="icon-box"><img src="line.png" alt="LINE"></div><div class="link-text"><div class="link-title">LINE</div><div class="link-desc">一对一私讯联系</div></div><div class="arrow">›</div></a>
-        <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="instagram.png" alt="Instagram"></div><div class="link-text"><div class="link-title">Instagram</div><div class="link-desc">追踪最新内容</div></div><div class="arrow">›</div></a>
-        <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="youtube.png" alt="YouTube"></div><div class="link-text"><div class="link-title">YouTube</div><div class="link-desc">观看影片内容</div></div><div class="arrow">›</div></a>
-        <a class="link-item tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="tiktok.png" alt="TikTok"></div><div class="link-text"><div class="link-title">TikTok</div><div class="link-desc">短影片与精华内容</div></div><div class="arrow">›</div></a>
-        <a class="link-item email" href="mailto:yourgmail@gmail.com"><div class="icon-box"><img src="gmail.png" alt="Email"></div><div class="link-text"><div class="link-title">Email</div><div class="link-desc">Email 联系我</div></div><div class="arrow">›</div></a>
+        <a class="link-item facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="facebook.png" alt="Facebook"></div>
+          <div class="link-text">
+            <div class="link-title">Facebook</div>
+            <div class="link-desc">查看更多资讯</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item line" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="line.png" alt="LINE"></div>
+          <div class="link-text">
+            <div class="link-title">LINE</div>
+            <div class="link-desc">一对一私讯联系</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="instagram.png" alt="Instagram"></div>
+          <div class="link-text">
+            <div class="link-title">Instagram</div>
+            <div class="link-desc">追踪最新内容</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="youtube.png" alt="YouTube"></div>
+          <div class="link-text">
+            <div class="link-title">YouTube</div>
+            <div class="link-desc">观看影片内容</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+          <div class="icon-box"><img src="tiktok.png" alt="TikTok"></div>
+          <div class="link-text">
+            <div class="link-title">TikTok</div>
+            <div class="link-desc">短影片与精华内容</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="link-item email" href="mailto:yourgmail@gmail.com">
+          <div class="icon-box"><img src="gmail.png" alt="Email"></div>
+          <div class="link-text">
+            <div class="link-title">Email</div>
+            <div class="link-desc">Email 联系我</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
       </div>
+
       <div class="footer">© 2026 Aze</div>
     </section>
   </div>
@@ -400,7 +584,12 @@
     });
 
     shareBtn.addEventListener('click', async () => {
-      const shareData = { title: document.title, text: '欢迎查看我的页面', url: window.location.href };
+      const shareData = {
+        title: document.title,
+        text: '欢迎查看我的页面',
+        url: window.location.href
+      };
+
       try {
         if (navigator.share) {
           await navigator.share(shareData);
