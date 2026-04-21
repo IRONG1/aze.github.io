@@ -1,281 +1,104 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>健康食谱领取</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<title>健康食谱领取</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif;background:#fff;color:#111;text-align:center;}
+  .container{padding:18px 16px;max-width:460px;margin:0 auto;}
 
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --subtext: #666666;
-    }
+  /* 页眉 */
+  .navbar{display:flex;align-items:center;justify-content:space-between;padding:8px;}
+  .navbar .icon{font-size:24px;cursor:pointer;}
+  .navbar img{width:32px;}
+  .share-btn{font-size:16px;color:#06c755;cursor:pointer;}
 
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
-    }
+  /* 折叠菜单 */
+  .menu{display:none;flex-direction:column;gap:10px;margin-top:8px;}
+  .menu.open{display:flex;}
+  .menu a{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:#f7f7f7;text-decoration:none;color:#111;font-size:15px;}
 
-    body {
-      display: flex;
-      justify-content: center;
-    }
+  /* 头像与文字 */
+  .avatar{margin-top:32px;width:84px;height:84px;border-radius:50%;}
+  .title{margin-top:24px;font-size:24px;font-weight:600;}
+  .subtitle{margin-top:12px;font-size:15px;color:#666;line-height:1.6;}
 
-    .page {
-      width: 100%;
-      min-height: 100vh;
-      padding: 28px 16px 40px;
-      display: flex;
-      justify-content: center;
-    }
+  /* 按钮 */
+  .btn-main{
+    display:block;
+    margin:24px auto 12px;
+    width:100%;
+    background:#06c755;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    padding:12px 0;
+    border-radius:30px;
+    text-decoration:none;
+  }
+  .btn-sub{
+    display:block;
+    margin-bottom:12px;
+    width:100%;
+    border:2px solid #06c755;
+    color:#111;
+    font-size:16px;
+    font-weight:600;
+    padding:10px 0;
+    border-radius:30px;
+    text-decoration:none;
+  }
 
-    .container {
-      width: 100%;
-      max-width: 460px;
-    }
-
-    /* 页眉部分 */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #f5f5f5;
-    }
-
-    .nav-left {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .nav-center img {
-      width: 50px;
-    }
-
-    .nav-right .share-btn {
-      background-color: #06c755;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* 折叠菜单部分 */
-    .menu-content {
-      display: none; /* 默认隐藏菜单 */
-      flex-direction: column;
-      gap: 10px;
-      background-color: #f5f5f5;
-      padding: 10px;
-      margin-top: 10px;
-    }
-
-    .menu-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .menu-item:hover {
-      background-color: #e6e6e6;
-    }
-
-    .menu-toggle.active + .menu-content {
-      display: flex;
-    }
-
-    /* 个人信息部分 */
-    .profile {
-      text-align: center;
-      margin-bottom: 26px;
-    }
-
-    .avatar-wrap {
-      position: relative;
-      width: 122px;
-      height: 122px;
-      margin: 0 auto 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      border: 3px solid #fff;
-    }
-
-    .name {
-      font-size: 26px;
-      font-weight: 800;
-      color: #111;
-      margin-bottom: 8px;
-    }
-
-    .bio {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--subtext);
-      max-width: 360px;
-      margin: 0 auto;
-    }
-
-    /* 领取健康食谱按钮部分 */
-    .cta-btn {
-      background-color: #06c755;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-align: center;
-      cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .cta-btn:hover {
-      background-color: #04b848;
-    }
-
-    /* 社交平台链接部分 */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .link-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      width: 100%;
-      min-height: 62px;
-      padding: 14px 18px;
-      border-radius: 18px;
-      text-decoration: none;
-      color: var(--text);
-      background: linear-gradient(135deg, #f8f8f8, #ffffff);
-      border: 1.5px solid #ececec;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
-      transition: 0.2s ease;
-    }
-
-    .link-item:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
-    }
-
-    .link-item:active {
-      transform: scale(0.98);
-      filter: brightness(0.97);
-    }
-
-    .icon-box {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .icon-box img {
-      width: 34px;
-      height: 34px;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      color: #999;
-      margin-top: 22px;
-      padding-bottom: 8px;
-    }
-
-  </style>
+  /* 提示文字 */
+  .footer-tips{margin-top:20px;font-size:14px;color:#666;}
+  .footer-tips a{color:#06c755;text-decoration:underline;font-weight:500;}
+</style>
 </head>
 <body>
-  <div class="page">
-    <div class="container">
 
-      <!-- 页眉部分 -->
-      <header class="navbar">
-        <div class="nav-left menu-toggle">☰</div>
-        <div class="nav-center">
-          <img src="line-logo.png" alt="LINE Logo" />
-        </div>
-        <div class="nav-right">
-          <button class="share-btn" onclick="sharePage()">分享</button>
-        </div>
-      </header>
+<div class="container">
 
-      <!-- 折叠菜单内容 -->
-      <div class="menu-content">
-        <div class="menu-item" onclick="window.location.href='https://line.me/ti/p/~your_line_id'">
-          <img src="line-icon.png" alt="Line">
-          <span>LINE</span>
-        </div>
-        <div class="menu-item" onclick="window.location.href='https://www.instagram.com/your_profile'">
-          <img src="instagram-icon.png" alt="Instagram">
-          <span>Instagram</span>
-        </div>
-        <div class="menu-item" onclick="window.location.href='https://www.facebook.com/your_profile'">
-          <img src="facebook-icon.png" alt="Facebook">
-          <span>Facebook</span>
-        </div>
-      </div>
-
-      <!-- 个人信息部分 -->
-      <section class="profile">
-        <div class="avatar-wrap">
-          <img class="avatar" src="your-avatar.jpg" alt="Your Name" />
-        </div>
-        <div class="name">你的名字</div>
-        <div class="bio">欢迎联系我，了解我的健康食谱和更多内容。</div>
-      </section>
-
-      <!-- 领取健康食谱按钮 -->
-      <section>
-        <div class="cta-btn" onclick="window.location.href='https://line.me/ti/p/~your_line_id'">
-          领取健康食谱
-        </div>
-      </section>
-
-      <!-- 页脚部分 -->
-      <footer class="footer">© 2026 你的品牌</footer>
-
-    </div>
+  <!-- 页眉 -->
+  <div class="navbar">
+    <div class="icon menu-toggle">☰</div>
+    <img src="whatsapp-logo.png" alt="Logo">
+    <div class="share-btn">分享</div>
   </div>
 
-  <script>
-    // 打开折叠菜单
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-    });
+  <!-- 菜单 -->
+  <div class="menu" id="navMenu">
+    <a href="https://line.me/ti/p/~your_line_id">
+      <img src="line.png" width="24"> LINE
+    </a>
+    <a href="https://www.instagram.com/your_profile">
+      <img src="instagram.png" width="24"> Instagram
+    </a>
+    <a href="https://www.facebook.com/your_profile">
+      <img src="facebook.png" width="24"> Facebook
+    </a>
+  </div>
 
-    // 分享功能
-    function sharePage() {
-      alert('分享功能待实现');
-    }
-  </script>
+  <!-- 主体 -->
+  <img class="avatar" src="avatar.jpg" alt="头像">
+  <div class="title">你的名字</div>
+  <div class="subtitle">欢迎领取我的健康食谱<br>点击按钮即可加入 LINE</div>
+
+  <a class="btn-main" href="https://line.me/ti/p/~your_line_id">领取健康食谱</a>
+  <a class="btn-sub" href="https://line.me/ti/p/~your_line_id">加入 LINE 聊天</a>
+
+  <div class="footer-tips">
+    没有LINE？<a href="https://line.me/">立即下载</a>
+  </div>
+
+</div>
+
+<script>
+  document.querySelector('.menu-toggle').onclick = function(){
+    document.getElementById('navMenu').classList.toggle('open');
+  };
+</script>
+
 </body>
 </html>
