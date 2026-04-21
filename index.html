@@ -6,12 +6,11 @@
   <title>健康食谱领取页</title>
   <style>
     :root {
-      --bg: #f7f8f6;
+      --bg: #ffffff;
       --soft: #f1f2ef;
       --text: #111111;
       --subtext: #6b6f69;
       --green: #19c957;
-      --green-deep: #11b84c;
       --border: rgba(17, 17, 17, 0.08);
       --shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
       --maxw: 430px;
@@ -33,7 +32,7 @@
       width: 100%;
       max-width: var(--maxw);
       min-height: 100vh;
-      background: var(--bg);
+      background: #ffffff;
       position: relative;
       overflow-x: hidden;
     }
@@ -166,7 +165,11 @@
     }
     .drawer-item span:last-child { font-size: 13px; font-weight: 600; }
 
-    .hero { padding: 42px 22px 18px; text-align: center; }
+    .hero {
+      padding: 42px 22px 18px;
+      text-align: center;
+      background: #ffffff;
+    }
     .avatar {
       width: 124px;
       height: 124px;
@@ -219,10 +222,11 @@
       min-height: 52px;
       background: #ffffff;
       border: 1.5px solid rgba(25, 201, 87, 0.42);
-      color: #169747;
+      color: #111111;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 900;
+      font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
     }
     .primary-btn:active, .secondary-btn:active, .link-item:active { transform: scale(0.985); }
 
@@ -246,7 +250,7 @@
 
     .more-panel {
       margin-top: 14px;
-      background: #ffffff;
+      background: var(--soft);
       color: #111;
       padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -343,14 +347,9 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg>
       </button>
 
-      <div class="brand"><span class="brand-mark"><img src="line.png" alt="LINE" /></span><span>LINE</span></div>
-
-      <button class="icon-btn share-btn" id="shareBtn" aria-label="分享页面">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.2"></circle><circle cx="6" cy="12" r="2.2"></circle><circle cx="18" cy="19" r="2.2"></circle><path d="M8 11l8-5"></path><path d="M8 13l8 5"></path></svg>
-      </button>
-
-      <nav class="drawer" id="drawer">
-        <a class="drawer-item" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span><span>Facebook</span></a>
+      <div class="brand"><span cl-btn share-btn" id="shareBtn" aria-label="分享页面">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <paopener noreferrer"><span class="drawer-icon"><img src="facebook.png" alt="Facebook" /></span><span>Facebook</span></a>
         <a class="drawer-item" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="line.png" alt="LINE" /></span><span>LINE</span></a>
         <a class="drawer-item" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="instagram.png" alt="Instagram" /></span><span>Instagram</span></a>
         <a class="drawer-item" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer"><span class="drawer-icon"><img src="youtube.png" alt="YouTube" /></span><span>YouTube</span></a>
@@ -371,10 +370,10 @@
     </main>
 
     <section class="more-panel">
-      <h2 class="section-title">更多內容與社群入口</h2>
+      <h2 class="section-title">更多內容與延伸入口</h2>
       <div class="links">
         <a class="link-item facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="facebook.png" alt="Facebook"></div><div class="link-text"><div class="link-title">Facebook</div><div class="link-desc">查看更多资讯</div></div><div class="arrow">›</div></a>
-        <a class="link-item line" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="line.png" alt="LINE"></div><div class="link-text"><div class="link-title">LINE</div><div class="link-desc">一对一私讯联系</div></div><div class="arrow">›</div></a>
+        <a class="link-item line" hrerrer"><div class="icon-box"><img src="line.png" alt="LINE"></div><div class="link-text"><div class="link-title">LINE</div><div class="link-desc">一对一私讯联系</div></div><div class="arrow">›</div></a>
         <a class="link-item instagram" href="https://www.instagram.com/llama.6952532/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="instagram.png" alt="Instagram"></div><div class="link-text"><div class="link-title">Instagram</div><div class="link-desc">追踪最新内容</div></div><div class="arrow">›</div></a>
         <a class="link-item youtube" href="https://www.youtube.com/@aze1122-tw" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="youtube.png" alt="YouTube"></div><div class="link-text"><div class="link-title">YouTube</div><div class="link-desc">观看影片内容</div></div><div class="arrow">›</div></a>
         <a class="link-item tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><div class="icon-box"><img src="tiktok.png" alt="TikTok"></div><div class="link-text"><div class="link-title">TikTok</div><div class="link-desc">短影片与精华内容</div></div><div class="arrow">›</div></a>
