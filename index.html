@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>个人主页</title>
+  <title>健康食谱领取</title>
   <style>
     * {
       margin: 0;
@@ -54,7 +54,7 @@
     }
 
     .nav-left {
-      font-size: 18px;
+      font-size: 24px;
       cursor: pointer;
     }
 
@@ -69,6 +69,34 @@
       padding: 8px 16px;
       border-radius: 4px;
       cursor: pointer;
+    }
+
+    /* 折叠菜单部分 */
+    .menu-content {
+      display: none; /* 默认隐藏菜单 */
+      flex-direction: column;
+      gap: 10px;
+      background-color: #f5f5f5;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      background-color: #e6e6e6;
+    }
+
+    .menu-toggle.active + .menu-content {
+      display: flex;
     }
 
     /* 个人信息部分 */
@@ -87,35 +115,13 @@
       justify-content: center;
     }
 
-    .avatar-glow {
-      position: absolute;
-      inset: -10px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(255, 153, 51, 0.34) 0%,
-        rgba(255, 153, 51, 0.22) 22%,
-        rgba(255, 153, 51, 0.13) 42%,
-        rgba(255, 153, 51, 0.07) 60%,
-        rgba(255, 153, 51, 0.03) 74%,
-        rgba(255, 153, 51, 0) 86%
-      );
-      filter: blur(12px);
-      animation: avatarGlow 2.6s ease-in-out infinite;
-      pointer-events: none;
-    }
-
     .avatar {
-      position: relative;
-      z-index: 2;
       width: 96px;
       height: 96px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
       border: 3px solid #fff;
-      background: #f5f5f5;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 0 0 4px rgba(255, 255, 255, 0.85);
     }
 
     .name {
@@ -133,7 +139,24 @@
       margin: 0 auto;
     }
 
-    /* 社交平台按钮部分 */
+    /* 领取健康食谱按钮部分 */
+    .cta-btn {
+      background-color: #06c755;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .cta-btn:hover {
+      background-color: #04b848;
+    }
+
+    /* 社交平台链接部分 */
     .links {
       display: flex;
       flex-direction: column;
@@ -180,24 +203,6 @@
       height: 34px;
     }
 
-    .link-text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .link-title {
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .arrow {
-      font-size: 20px;
-      font-weight: 700;
-    }
-
     .footer {
       text-align: center;
       font-size: 12px;
@@ -214,52 +219,45 @@
 
       <!-- 页眉部分 -->
       <header class="navbar">
-        <div class="nav-left">导航</div>
+        <div class="nav-left menu-toggle">☰</div>
         <div class="nav-center">
-          <img src="your-line-logo.png" alt="LINE Logo" />
+          <img src="line-logo.png" alt="LINE Logo" />
         </div>
         <div class="nav-right">
           <button class="share-btn" onclick="sharePage()">分享</button>
         </div>
       </header>
 
+      <!-- 折叠菜单内容 -->
+      <div class="menu-content">
+        <div class="menu-item" onclick="window.location.href='https://line.me/ti/p/~your_line_id'">
+          <img src="line-icon.png" alt="Line">
+          <span>LINE</span>
+        </div>
+        <div class="menu-item" onclick="window.location.href='https://www.instagram.com/your_profile'">
+          <img src="instagram-icon.png" alt="Instagram">
+          <span>Instagram</span>
+        </div>
+        <div class="menu-item" onclick="window.location.href='https://www.facebook.com/your_profile'">
+          <img src="facebook-icon.png" alt="Facebook">
+          <span>Facebook</span>
+        </div>
+      </div>
+
       <!-- 个人信息部分 -->
       <section class="profile">
         <div class="avatar-wrap">
-          <span class="avatar-glow"></span>
           <img class="avatar" src="your-avatar.jpg" alt="Your Name" />
         </div>
         <div class="name">你的名字</div>
-        <div class="bio">
-          简短的个人简介，描述你是谁或你的品牌。<br>例如：古法·健康·运动
-        </div>
+        <div class="bio">欢迎联系我，了解我的健康食谱和更多内容。</div>
       </section>
 
-      <!-- 社交平台链接部分 -->
-      <section class="links">
-        <a class="link-item" href="https://line.me/ti/p/~your_line_id" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box">
-            <img src="line.png" alt="LINE">
-          </div>
-          <div class="link-text">
-            <div class="link-title">LINE</div>
-            <div class="link-desc">一对一私讯联系</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <a class="link-item" href="https://www.instagram.com/your_profile" target="_blank" rel="noopener noreferrer">
-          <div class="icon-box">
-            <img src="instagram.png" alt="Instagram">
-          </div>
-          <div class="link-text">
-            <div class="link-title">Instagram</div>
-            <div class="link-desc">查看最新内容</div>
-          </div>
-          <div class="arrow">›</div>
-        </a>
-
-        <!-- 你可以继续添加更多社交平台按钮 -->
+      <!-- 领取健康食谱按钮 -->
+      <section>
+        <div class="cta-btn" onclick="window.location.href='https://line.me/ti/p/~your_line_id'">
+          领取健康食谱
+        </div>
       </section>
 
       <!-- 页脚部分 -->
@@ -269,11 +267,15 @@
   </div>
 
   <script>
+    // 打开折叠菜单
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
+
+    // 分享功能
     function sharePage() {
-      // 分享功能（可根据需求实现）
       alert('分享功能待实现');
     }
   </script>
-
 </body>
 </html>
